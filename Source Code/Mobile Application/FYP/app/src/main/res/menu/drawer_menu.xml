@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/viewProfile"
+            android:icon="@drawable/ic_account"
+            android:title="View Profile" />
+
+        <item
+            android:id="@+id/ewallet"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+            android:title="E-Wallet" />
+
+        <item android:title="Project">
+            <menu>
+                <item
+                    android:id="@+id/add_project"
+                    android:icon="@drawable/ic_add"
+                    android:title="Add Project" />
+
+                <item
+                    android:id="@+id/my_project"
+                    android:icon="@drawable/ic_project"
+                    android:title="My Project" />
+
+            </menu>
+        </item>
+
+        <item android:title="Transaction">
+            <menu>
+                <item
+                    android:id="@+id/purchase"
+                    android:icon="@drawable/purchase"
+                    android:title="Purchase" />
+
+                <item
+                    android:id="@+id/order"
+                    android:icon="@drawable/order"
+                    android:title="Order" />
+            </menu>
+        </item>
+
+        <item android:title="Setting">
+            <menu>
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/ic_account"
+                    android:title="Profile" />
+
+                <item
+                    android:id="@+id/verification"
+                    android:icon="@drawable/ic_verified_user_black_24dp"
+                    android:title="Verification" />
+
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout" />
+            </menu>
+        </item>
+
+    </group>
+
+</menu>

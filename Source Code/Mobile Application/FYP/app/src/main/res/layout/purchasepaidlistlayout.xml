@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/serviceImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/serviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:text="NAME"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/serviceName"
+            android:id="@+id/datetxt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:textColor="@color/Maroon"
+            android:text="Paid On: " />
+
+        <TextView
+            android:id="@+id/paidDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/datetxt"
+            android:text="DATE" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/paidDate"
+            android:id="@+id/dueDatetxt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:textColor="@color/Maroon"
+            android:text="Complete By: " />
+
+        <TextView
+            android:id="@+id/serviceDueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/dueDatetxt"
+            android:text="DUE DATE" />
+
+        <TextView
+            android:id="@+id/completeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/serviceName"
+            android:visibility="gone"
+            android:textColor="@color/Maroon"
+            android:text="Complete On:" />
+
+        <TextView
+            android:id="@+id/completeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/completeText"
+            android:text="DATE" />
+
+        <TextView
+            android:id="@+id/acceptText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/completeDate"
+            android:textColor="@color/Maroon"
+            android:text="Accept By:" />
+
+        <TextView
+            android:id="@+id/acceptDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/serviceImage"
+            android:layout_below="@+id/acceptText"
+            android:text="DATE:" />
+
+        <TextView
+            android:id="@+id/statustext"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="PENDING"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/roundedbtn"
+            android:layout_alignParentRight="true"
+            android:text="Cancel"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:textColor="@color/Word" />
+
+        <Button
+            android:id="@+id/receiveBtn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/roundedbtn"
+            android:layout_alignParentRight="true"
+            android:text="Received"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:textColor="@color/Word" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

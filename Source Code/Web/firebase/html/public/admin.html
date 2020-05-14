@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body onload="getData(); getUser(); getOrder();">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyBe530Uquru1RTRF6psjwR-wKZ8Qne1Eqs",
+			authDomain: "freelancer-d92d1.firebaseapp.com",
+			databaseURL: "https://freelancer-d92d1.firebaseio.com",
+			projectId: "freelancer-d92d1",
+			storageBucket: "freelancer-d92d1.appspot.com",
+			messagingSenderId: "1080865952777",
+			appId: "1:1080865952777:web:1130c870f64791dbfbd4d8",
+			measurementId: "G-BJVE63VC8B"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  firebase.analytics();
+		</script>
+		
+		<script src="js/admin.js"></script>
+
+<div class="container" id="login_div" style="display: none;">
+  <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" value="" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <button onclick="login()" class="btn btn-primary">Log In</button>
+</div>
+
+<div class="container" id="logged_div" style="display: none;">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+	  <!-- Links -->
+	  <ul class="navbar-nav">
+		<li class="nav-item">
+		  <a class="nav-link" a href="#home" onclick="return ShowContent('home_div');">Home</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" a href="#user" onclick="return ShowContent('user_div');">User</a>
+		</li>
+		<!-- Dropdown -->
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+			Category
+		  </a>
+		  <div class="dropdown-menu">
+			<a class="dropdown-item" a href="#addcategory" onclick="return ShowContent('addCat_div');">Add Category</a>
+			<a class="dropdown-item" a href="#viewcategory" onclick="return ShowContent('viewCat_div'); return getData();">View Category</a>
+		  </div>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" a href="#order" onclick="return ShowContent('order_div');">Order</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" onclick="logout()" href="#">Log out</a>
+		</li>
+	  </ul>
+	</nav>
+	
+	<div class="container-fluid" style="margin-top:80px">
+		<!-- Home -->
+		<div class="container" id="home_div" style="display: block;">
+			<h2>Home</h2>
+		</div>
+		
+		<!-- User -->
+		<div class="container" id="user_div" style="display: none;">
+			<h2>Users</h2>
+			<button onclick="getUser()" class="btn btn-primary">View User</button>
+			<br>
+			<br>
+			<h3>Not Verified</h3>
+			<br>
+			<div id="userData_div">
+			</div>
+			<br>
+			<h3>Verified</h3>
+			<br>
+			<div id="verified_div">
+			</div>
+			
+			<div id="details_div">
+			</div>
+		</div>
+		
+		<!-- Add Category -->
+		<div class="container" id="addCat_div" style="display: none;">
+			<h2>Add Category</h2>
+			<div class="form-group">
+			  <label for="categoryName">Category Name:</label>
+			  <input type="text" class="form-control" id="categoryName" placeholder="Category Name" name="addCategory">
+			  <br>
+			  <button onclick="addCategory()" class="btn btn-primary">Add</button>
+			</div>
+		</div>
+		
+		<!-- View Category -->
+		<div class="container" id="viewCat_div" style="display: none;">
+			<h2>View Category</h2>
+			<button onclick="getData()" class="btn btn-primary">View</button>
+			<br>
+			<br>
+			<div id="writeData_div">
+			</div>
+		</div>
+		
+		<!-- Order -->
+		<div class="container" id="order_div" style="display: none;">
+			<h2>View Order</h2>
+			<button onclick="getOrder()" class="btn btn-primary">View</button>
+			<br>
+			<br>
+			<div id="writeOrder_div">
+			</div>
+			<br>
+			<div id="orderDetails_div">
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
